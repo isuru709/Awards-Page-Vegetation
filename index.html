@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdant | Organic Luxury - Premium Farm-to-Table Vegetables</title>
+    <meta name="description"
+        content="Experience the pristine taste of nature's finest architecture. Verdant delivers premium organic vegetables curated for the discerning palate.">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="loading">
+
+    <!-- ==================== PRELOADER ==================== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <span class="preloader-letter">V</span>
+                <span class="preloader-letter">e</span>
+                <span class="preloader-letter">r</span>
+                <span class="preloader-letter">d</span>
+                <span class="preloader-letter">a</span>
+                <span class="preloader-letter">n</span>
+                <span class="preloader-letter">t</span>
+                <span class="preloader-dot">.</span>
+            </div>
+            <div class="preloader-progress">
+                <div class="preloader-bar"></div>
+            </div>
+            <p class="preloader-text">Loading Experience</p>
+        </div>
+        <!-- Floating Particles -->
+        <div class="preloader-particles">
+            <div class="preloader-particle"></div>
+            <div class="preloader-particle"></div>
+            <div class="preloader-particle"></div>
+            <div class="preloader-particle"></div>
+            <div class="preloader-particle"></div>
+        </div>
+    </div>
+
+    <!-- ==================== SCROLL PROGRESS ==================== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ==================== CUSTOM CURSOR ==================== -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower">
+        <span class="cursor-text">View</span>
+    </div>
+
+    <!-- ==================== FLOATING BACKGROUND ELEMENTS ==================== -->
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo magnetic" data-strength="20">
+            <span class="logo-text">Verdant</span><span class="logo-dot">.</span>
+        </div>
+        <div class="nav-links">
+            <a href="#collection" class="nav-link magnetic" data-strength="15">
+                <span>Collection</span>
+            </a>
+            <a href="#philosophy" class="nav-link magnetic" data-strength="15">
+                <span>Philosophy</span>
+            </a>
+            <a href="#features" class="nav-link magnetic" data-strength="15">
+                <span>Features</span>
+            </a>
+            <a href="#contact" class="nav-link magnetic" data-strength="15">
+                <span>Contact</span>
+            </a>
+        </div>
+        <div class="nav-actions">
+            <button class="nav-cart magnetic" data-strength="20">
+                <span class="cart-text">Cart</span>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+        <!-- Mobile Menu Toggle -->
+        <button class="nav-menu-toggle magnetic" id="menuToggle" data-strength="15" aria-label="Toggle menu">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </button>
+    </nav>
+
+    <!-- ==================== MOBILE MENU ==================== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#collection" class="mobile-link">Collection</a>
+            <a href="#philosophy" class="mobile-link">Philosophy</a>
+            <a href="#features" class="mobile-link">Features</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- ==================== SMOOTH SCROLL WRAPPER ==================== -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- ==================== HERO SECTION ==================== -->
+            <header class="hero" id="hero">
+                <div class="hero-bg-wrapper">
+                    <img src="hero_bg.png" alt="Fresh organic produce" class="hero-bg parallax" data-speed="0.3">
+                    <div class="hero-overlay"></div>
+                </div>
+
+                <div class="hero-content">
+                    <div class="hero-badge reveal-element">
+                        <span class="badge-icon">🌿</span>
+                        <span class="badge-text">100% Organic</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="title-line">
+                            <span class="reveal-text" data-delay="0">Cultivating</span>
+                        </span>
+                        <span class="title-line">
+                            <span class="reveal-text" data-delay="1">Perfection</span>
+                        </span>
+                    </h1>
+
+                    <p class="hero-subtitle reveal-element" data-delay="2">
+                        Experience the pristine taste of nature's finest architecture.<br>
+                        Farm-fresh, delivered to your door.
+                    </p>
+
+                    <div class="hero-cta reveal-element" data-delay="3">
+                        <a href="#collection" class="btn-primary magnetic" data-strength="25">
+                            <span class="btn-text">Explore Collection</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                        <a href="#philosophy" class="btn-ghost magnetic" data-strength="25">
+                            <span class="btn-text">Our Story</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Decorative Elements -->
+                <div class="hero-deco hero-deco-1 parallax" data-speed="-0.1"></div>
+                <div class="hero-deco hero-deco-2 parallax" data-speed="0.15"></div>
+
+                <!-- 3D Floating Shapes -->
+                <div class="floating-shapes">
+                    <div class="shape shape-1">
+                        <div class="shape-3d diamond"></div>
+                    </div>
+                    <div class="shape shape-2">
+                        <div class="shape-3d sphere"></div>
+                    </div>
+                    <div class="shape shape-3">
+                        <div class="shape-3d torus"></div>
+                    </div>
+                    <div class="shape shape-4">
+                        <div class="shape-3d pyramid"></div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ==================== SHOWCASE / COLLECTION SECTION ==================== -->
+            <section id="collection" class="showcase">
+                <div class="showcase-wrapper">
+                    <div class="showcase-content">
+                        <div class="section-header">
+                            <span class="section-tag reveal-element">The Harvest</span>
+                            <h2 class="section-title split-text">Seasonal Selections</h2>
+                            <p class="section-desc reveal-element">
+                                Picked at the peak of flavor, delivered with care.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 3D Rotating Vegetable Cube -->
+                    <div class="cube-container reveal-element">
+                        <div class="cube">
+                            <div class="cube-face cube-front">
+                                <img src="veg_tomato.png" alt="Tomato">
+                            </div>
+                            <div class="cube-face cube-back">
+                                <img src="veg_carrot.png" alt="Carrot">
+                            </div>
+                            <div class="cube-face cube-right">
+                                <img src="veg_eggplant.png" alt="Eggplant">
+                            </div>
+                            <div class="cube-face cube-left">
+                                <img src="veg_tomato.png" alt="Tomato">
+                            </div>
+                            <div class="cube-face cube-top">
+                                <img src="veg_carrot.png" alt="Carrot">
+                            </div>
+                            <div class="cube-face cube-bottom">
+                                <img src="veg_eggplant.png" alt="Eggplant">
+                            </div>
+                        </div>
+                        <div class="cube-shadow"></div>
+                        <div class="cube-glow"></div>
+                    </div>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Product Card 1 - Tomato -->
+                    <article class="product-card tilt-card" data-speed="0.05">
+                        <div class="product-image-wrapper">
+                            <div class="product-image-inner">
+                                <img src="veg_tomato.png" alt="Crimson Heirloom Tomato" class="product-image">
+                            </div>
+                            <div class="product-glow"></div>
+                            <div class="product-label">Best Seller</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-details">
+                                <h3 class="product-name">Crimson Heirloom</h3>
+                                <p class="product-origin">Napa Valley, CA</p>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-amount">$12</span>
+                                <span class="price-unit">/ lb</span>
+                            </div>
+                        </div>
+                        <button class="product-add magnetic" data-strength="10">
+                            <span>+</span>
+                        </button>
+                    </article>
+
+                    <!-- Product Card 2 - Carrot -->
+                    <article class="product-card tilt-card" data-speed="0.08">
+                        <div class="product-image-wrapper">
+                            <div class="product-image-inner">
+                                <img src="veg_carrot.png" alt="Heritage Rainbow Carrots" class="product-image">
+                            </div>
+                            <div class="product-glow"></div>
+                            <div class="product-label">New</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-details">
+                                <h3 class="product-name">Heritage Carrots</h3>
+                                <p class="product-origin">Sonoma County, CA</p>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-amount">$8</span>
+                                <span class="price-unit">/ bunch</span>
+                            </div>
+                        </div>
+                        <button class="product-add magnetic" data-strength="10">
+                            <span>+</span>
+                        </button>
+                    </article>
+
+                    <!-- Product Card 3 - Eggplant -->
+                    <article class="product-card tilt-card" data-speed="0.06">
+                        <div class="product-image-wrapper">
+                            <div class="product-image-inner">
+                                <img src="veg_eggplant.png" alt="Obsidian Eggplant" class="product-image">
+                            </div>
+                            <div class="product-glow"></div>
+                            <div class="product-label">Organic</div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-details">
+                                <h3 class="product-name">Obsidian Eggplant</h3>
+                                <p class="product-origin">Central Valley, CA</p>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-amount">$6</span>
+                                <span class="price-unit">/ lb</span>
+                            </div>
+                        </div>
+                        <button class="product-add magnetic" data-strength="10">
+                            <span>+</span>
+                        </button>
+                    </article>
+                </div>
+
+                <div class="showcase-cta reveal-element">
+                    <a href="#" class="btn-outline magnetic" data-strength="20">
+                        <span class="btn-text">View All Products</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ==================== FEATURES SECTION ==================== -->
+            <section id="features" class="features">
+                <div class="features-bg parallax" data-speed="0.1"></div>
+
+                <div class="features-grid">
+                    <div class="feature-card glass-card reveal-element" data-delay="0">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                <path d="M2 17l10 5 10-5" />
+                                <path d="M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Farm Fresh</h3>
+                        <p class="feature-desc">Harvested within 24 hours of delivery for maximum freshness and
+                            nutritional value.</p>
+                    </div>
+
+                    <div class="feature-card glass-card reveal-element" data-delay="1">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Same Day Delivery</h3>
+                        <p class="feature-desc">Order by noon, enjoy your organic produce by dinner. Premium logistics
+                            guaranteed.</p>
+                    </div>
+
+                    <div class="feature-card glass-card reveal-element" data-delay="2">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <path d="M9 12l2 2 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">100% Organic</h3>
+                        <p class="feature-desc">USDA certified organic. No pesticides, no GMOs, just pure nature as
+                            intended.</p>
+                    </div>
+
+                    <div class="feature-card glass-card reveal-element" data-delay="3">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Curated with Love</h3>
+                        <p class="feature-desc">Each box is hand-curated by our produce experts to ensure only the
+                            finest selection.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== PHILOSOPHY SECTION ==================== -->
+            <section id="philosophy" class="philosophy">
+                <div class="philosophy-visual parallax" data-speed="0.2">
+                    <div class="philosophy-circle"></div>
+                </div>
+
+                <div class="philosophy-content">
+                    <span class="section-tag reveal-element">Our Philosophy</span>
+
+                    <h2 class="big-text split-text">
+                        We believe in the <em>art</em> of agriculture.
+                    </h2>
+
+                    <p class="philosophy-text reveal-element">
+                        Every leaf, every root, every vibrant color is a testament to the soil it grew in.
+                        We don't just grow vegetables; we curate experiences for the palate.
+                        From seed to table, we honor the ancient traditions while embracing sustainable innovation.
+                    </p>
+
+                    <div class="philosophy-stats">
+                        <div class="stat reveal-element" data-delay="0">
+                            <span class="stat-number" data-count="150">0</span>
+                            <span class="stat-label">Partner Farms</span>
+                        </div>
+                        <div class="stat reveal-element" data-delay="1">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-suffix">K+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat reveal-element" data-delay="2">
+                            <span class="stat-number" data-count="12">0</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn-outline magnetic" data-strength="20">
+                        <span class="btn-text">Read Our Story</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ==================== TESTIMONIALS SECTION ==================== -->
+            <section class="testimonials">
+                <div class="section-header">
+                    <span class="section-tag reveal-element">Testimonials</span>
+                    <h2 class="section-title split-text">What They Say</h2>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass-card reveal-element" data-delay="0">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">The quality is unmatched. Every vegetable tastes exactly how produce
+                            should taste — full of life and flavor.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JC</div>
+                            <div class="author-info">
+                                <span class="author-name">James Chen</span>
+                                <span class="author-title">Executive Chef</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card reveal-element" data-delay="1">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Verdant has transformed how my family eats. My kids actually ask for
+                            vegetables now. That's the real magic.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info">
+                                <span class="author-name">Sarah Mitchell</span>
+                                <span class="author-title">Wellness Coach</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card reveal-element" data-delay="2">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">The attention to detail is remarkable. From packaging to the produce
+                            itself — everything is premium quality.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AR</div>
+                            <div class="author-info">
+                                <span class="author-name">Alex Rivera</span>
+                                <span class="author-title">Food Blogger</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== NEWSLETTER SECTION ==================== -->
+            <section class="newsletter">
+                <div class="newsletter-content glass-card">
+                    <div class="newsletter-text">
+                        <h2 class="newsletter-title split-text">Stay Fresh</h2>
+                        <p class="newsletter-desc reveal-element">Get exclusive offers, seasonal recipes, and first
+                            access to new harvests.</p>
+                    </div>
+                    <form class="newsletter-form reveal-element" id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Enter your email" required>
+                            <button type="submit" class="form-submit magnetic" data-strength="15">
+                                <span>Subscribe</span>
+                                <span class="submit-arrow">→</span>
+                            </button>
+                        </div>
+                        <p class="form-note">No spam, only the freshest updates. Unsubscribe anytime.</p>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ==================== FOOTER ==================== -->
+            <footer id="contact" class="footer">
+                <div class="footer-content">
+                    <div class="footer-main">
+                        <div class="footer-brand">
+                            <div class="footer-logo">Verdant<span>.</span></div>
+                            <p class="footer-tagline">Cultivating perfection since 2014.</p>
+                        </div>
+
+                        <div class="footer-cta">
+                            <h2 class="footer-cta-title split-text">Ready to taste?</h2>
+                            <a href="#" class="btn-primary magnetic" data-strength="25">
+                                <span class="btn-text">Order Your Box</span>
+                                <span class="btn-icon">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <div class="footer-col">
+                            <h4 class="footer-heading">Shop</h4>
+                            <a href="#" class="footer-link magnetic" data-strength="10">All Products</a>
+                            <a href="#" class="footer-link magnetic" data-strength="10">Seasonal Box</a>
+                            <a href="#" class="footer-link magnetic" data-strength="10">Gift Cards</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4 class="footer-heading">Company</h4>
+                            <a href="#" class="footer-link magnetic" data-strength="10">About Us</a>
+                            <a href="#" class="footer-link magnetic" data-strength="10">Our Farms</a>
+                            <a href="#" class="footer-link magnetic" data-strength="10">Careers</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4 class="footer-heading">Social</h4>
+                            <a href="#" class="footer-link magnetic" data-strength="10">Instagram</a>
+                            <a href="#" class="footer-link magnetic" data-strength="10">Twitter</a>
+                            <a href="#" class="footer-link magnetic" data-strength="10">Pinterest</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4 class="footer-heading">Contact</h4>
+                            <a href="mailto:hello@verdant.com" class="footer-link magnetic"
+                                data-strength="10">hello@verdant.com</a>
+                            <a href="tel:+18001234567" class="footer-link magnetic"
+                                data-strength="10">1-800-123-4567</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <p class="copyright">&copy; 2026 Verdant. All Rights Reserved.</p>
+                        <div class="footer-legal">
+                            <a href="#" class="magnetic" data-strength="5">Privacy Policy</a>
+                            <a href="#" class="magnetic" data-strength="5">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div> <!-- /smooth-content -->
+    </div> <!-- /smooth-wrapper -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

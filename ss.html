@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshHarvest - From Farm to Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary: #4CAF50; /* Organic Green */
+            --dark: #2c3e50;
+            --light: #f9f9f9;
+            --text-gray: #666;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h4 {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER / NAVIGATION --- */
+        header {
+            background: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(to right, #fdfbfb, #ebedee);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+        }
+
+        .stat-item h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* --- PRODUCTS SECTION --- */
+        .products {
+            padding: 80px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .product-img {
+            height: 200px;
+            width: 100%;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #ffc107;
+            font-size: 0.9rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .price span {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        .add-btn {
+            background: var(--light);
+            color: var(--dark);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .add-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* --- FEATURES (WHY CHOOSE US) --- */
+        .features {
+            padding: 80px 0;
+            background-color: #f0f7f4;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* --- TESTIMONIALS --- */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: #eee;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+
+        .review-text {
+            position: relative;
+            z-index: 2;
+            font-style: italic;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .user-details h5 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .user-details span {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* --- NEWSLETTER --- */
+        .newsletter {
+            padding: 80px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .newsletter h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .newsletter p { max-width: 600px; margin: 0 auto 30px auto; opacity: 0.9; }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            padding: 15px 20px;
+            border-radius: 30px;
+            border: none;
+            width: 70%;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            background: var(--dark);
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 80px 0 20px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            transition: 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-col p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .stats { justify-content: center; }
+            .nav-links { display: none; } /* Mobile Menu implementation omitted for brevity */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-leaf"></i> FreshHarvest
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Farms</a></li>
+                    <li><a href="#">Recipes</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h4>Fresh From</h4>
+                    <h1>Farm to Home</h1>
+                    <p>Discover the finest selection of organic vegetables, handpicked from local farms and delivered fresh to your doorstep within 24 hours.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <a href="#" class="btn btn-outline">Explore Collection</a>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Organic Products</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10k+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24h</h3>
+                            <p>Fast Delivery</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Organic Vegetables">
+                </div>
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h4>Our Products</h4>
+                    <h2>Popular Vegetables</h2>
+                    <p>Handpicked selection of our freshest organic produce, straight from certified local farms.</p>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=400&q=80" alt="Tomatoes">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-header">
+                                <h3>Organic Tomatoes</h3>
+                                <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                            <div class="price-row">
+                                <div class="price">$4.99<span>/lb</span></div>
+                                <div class="add-btn"><i class="fas fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=400&q=80" alt="Broccoli">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-header">
+                                <h3>Fresh Broccoli</h3>
+                                <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                            <div class="price-row">
+                                <div class="price">$3.49<span>/head</span></div>
+                                <div class="add-btn"><i class="fas fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=400&q=80" alt="Carrots">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-header">
+                                <h3>Farm Carrots</h3>
+                                <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                            </div>
+                            <div class="price-row">
+                                <div class="price">$2.99<span>/bunch</span></div>
+                                <div class="add-btn"><i class="fas fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1563565375-f3fdf5efa269?auto=format&fit=crop&w=400&q=80" alt="Bell Peppers">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-header">
+                                <h3>Bell Peppers</h3>
+                                <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                            <div class="price-row">
+                                <div class="price">$5.99<span>/lb</span></div>
+                                <div class="add-btn"><i class="fas fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&q=80" alt="Spinach">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-header">
+                                <h3>Baby Spinach</h3>
+                                <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                            <div class="price-row">
+                                <div class="price">$6.49<span>/bag</span></div>
+                                <div class="add-btn"><i class="fas fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1615485925763-867862f80932?auto=format&fit=crop&w=400&q=80" alt="Eggplant">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-header">
+                                <h3>Eggplant</h3>
+                                <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                            </div>
+                            <div class="price-row">
+                                <div class="price">$3.99<span>/each</span></div>
+                                <div class="add-btn"><i class="fas fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn btn-primary">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h4>Why Choose Us</h4>
+                    <h2>The FreshHarvest Difference</h2>
+                    <p>We're committed to bringing you the freshest, healthiest produce while supporting local farmers and sustainable practices.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <h3>100% Organic</h3>
+                        <p>All our vegetables are certified organic, grown without pesticides or harmful chemicals.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shipping-fast feature-icon"></i>
+                        <h3>Fast Delivery</h3>
+                        <p>Same-day delivery available. Fresh produce arrives at your door within 24 hours.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-medal feature-icon"></i>
+                        <h3>Quality Guaranteed</h3>
+                        <p>Not satisfied? Get a full refund. We stand behind the quality of every product.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-tractor feature-icon"></i>
+                        <h3>Farm Fresh</h3>
+                        <p>Harvested in the morning, delivered by evening. Maximum freshness guaranteed.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-crown feature-icon"></i>
+                        <h3>Premium Selection</h3>
+                        <p>We partner with award-winning local farms known for exceptional produce.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-leaf feature-icon"></i>
+                        <h3>Sustainable Practices</h3>
+                        <p>Eco-friendly packaging and carbon-neutral delivery for a greener planet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h4>Customer Love</h4>
+                    <h2>What Our Customers Say</h2>
+                    <p>Join thousands of happy families who trust FreshHarvest for their daily produce needs.</p>
+                </div>
+
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <div class="stars" style="color:#ffc107; margin-bottom:10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="review-text">"The quality of vegetables is outstanding! Everything arrives fresh and vibrant. My family has noticed the difference in taste compared to grocery store produce."</p>
+                        <div class="user-info">
+                            <div class="user-avatar">SM</div>
+                            <div class="user-details">
+                                <h5>Sarah Mitchell</h5>
+                                <span>Portland, OR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <div class="stars" style="color:#ffc107; margin-bottom:10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="review-text">"Fast delivery and excellent customer service. The organic certification gives me peace of mind. Highly recommend to anyone who cares about what they eat."</p>
+                        <div class="user-info">
+                            <div class="user-avatar">DC</div>
+                            <div class="user-details">
+                                <h5>David Chen</h5>
+                                <span>Seattle, WA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <div class="stars" style="color:#ffc107; margin-bottom:10px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="review-text">"I love supporting local farmers through this platform. The vegetables are always fresh, and the variety is amazing. It's changed how my family eats."</p>
+                        <div class="user-info">
+                            <div class="user-avatar">ER</div>
+                            <div class="user-details">
+                                <h5>Emily Rodriguez</h5>
+                                <span>San Francisco, CA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>Get Fresh Updates</h2>
+                <p>Subscribe to our newsletter for exclusive deals, seasonal recipes, and early access to new products.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p style="font-size: 0.8rem; margin-top: 15px;">Join 10,000+ subscribers. No spam, unsubscribe anytime.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Fresh Harvest</h3>
+                    <p>Bringing the freshest organic vegetables from local farms straight to your table. Quality you can taste, sustainability you can trust.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Shop All</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Farms</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Recipes & Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Organic Way, Portland, OR 97201</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@freshharvest.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2020 FreshHarvest. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
